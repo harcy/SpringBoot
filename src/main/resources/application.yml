@@ -7,5 +7,12 @@ girl:
   age: 18
   size: F
 
+spring:
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/forum
+      username: root
+
+
 
 
