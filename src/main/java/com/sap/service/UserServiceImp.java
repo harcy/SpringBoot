@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by I337300 on 1/5/2017.
+ * Created by  on 1/5/2017.
  */
-@Service
+
 public class UserServiceImp implements UserService {
     @Autowired
     private UserMapper userMapper;

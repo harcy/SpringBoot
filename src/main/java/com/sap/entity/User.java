@@ -1,7 +1,7 @@
 package com.sap.entity;
 
 /**
- * Created by I337300 on 1/5/2017.
+ * Created by  on 1/5/2017.
  */
 public class User {
     private Integer userId;

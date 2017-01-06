@@ -1,12 +1,12 @@
 package com.sap.mapper;
 
 import com.sap.entity.User;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
- * Created by I337300 on 1/5/2017.
+ * Created by on 1/5/2017.
  */
-@Repository
+@Mapper
 public interface UserMapper {
     User gerUserByUserName(String userName);
 }
