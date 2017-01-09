@@ -9,12 +9,13 @@ import org.springframework.stereotype.Service;
  * Created by  on 1/5/2017.
  */
 
+@Service
 public class UserServiceImp implements UserService {
     @Autowired
     private UserMapper userMapper;
     @Override
     public User getUserByName(String name) {
-        User user = userMapper.gerUserByUserName(name);
+        User user = userMapper.getUserByUserName(name);
         return user;
     }
 }

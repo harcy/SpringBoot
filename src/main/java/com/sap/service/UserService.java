@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 /**
  * Created by  on 1/5/2017.
  */
-@Component
 public interface UserService {
 
     User getUserByName(String name);

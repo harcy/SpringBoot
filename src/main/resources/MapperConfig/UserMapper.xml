@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sap.entity.User">
-    <select id="gerUserByUserName" resultType="User">
-        SELECT * FROM t_user where user_id = #{userId}
+
+<!--
+  namespace: 一是用于区分不同mapper下的id(mybatis通过namespace和id联合区分)
+             二是与接口关联
+  parameterType/parameterMap
+-->
+<mapper namespace="com.sap.mapper.UserMapper">
+    <select id="getUserByUserName" parameterType="java.lang.String" resultType="com.sap.entity.User">
+        SELECT * FROM test_user where user_name = #{userName}
     </select>
 </mapper>

@@ -1,5 +1,7 @@
 package com.sap.controller;
 
+import com.sap.configure.DataSourceConfig;
+import com.sap.configure.MybatisConfig;
 import com.sap.entity.Girl;
 import com.sap.entity.User;
 import com.sap.service.UserService;
@@ -13,23 +15,32 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by  on 1/4/2017.
  */
 @RestController
+
 public class HelloSpring {
 
     @Autowired
     private Girl girl;
 
     @Autowired
-    private UserService userService;
+    private DataSourceConfig dataSourceConfig;
+
+    @Autowired
+    private MybatisConfig mybatisConfig;
+
+    //@Autowired
+    //private UserService userService;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String say() {
-        return "hi," + girl.getName() + " Welcome SpringBoot";
+        return "hi," + girl.getName() + " Welcome SpringBoot"
+                + dataSourceConfig.getDriverClassName();
+                //+ mybatisConfig.getConfigLocation();
     }
 
-    @RequestMapping(value = "/user/{userName}", method = RequestMethod.GET)
+   /*@RequestMapping(value = "/user/{userName}", method = RequestMethod.GET)
     public User getUser(@PathVariable String userName) {
         User user = new User();
         user = userService.getUserByName(userName);
         return user;
-    }
+    }*/
 }

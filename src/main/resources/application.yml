@@ -10,10 +10,12 @@ girl:
 spring:
   datasource:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/forum
+      url: jdbc:mysql://127.0.0.1:3306/forum?useSSL=false
       username: root
+
 mybatis:
-  config-location: classpath:mybatis-config.xml
+  config-location: classpath:MapperConfig/*.xml
+  type-aliases-package: com.sap.entity
 
 
 
