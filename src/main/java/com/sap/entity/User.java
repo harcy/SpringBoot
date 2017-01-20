@@ -1,9 +1,16 @@
 package com.sap.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by  on 1/5/2017.
  */
+@Entity
 public class User {
+    @Id
+    @GeneratedValue
     private Integer userId;
     private String userName;
     private String userEmail;

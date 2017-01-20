@@ -12,10 +12,13 @@ spring:
       driver-class-name: com.mysql.jdbc.Driver
       url: jdbc:mysql://127.0.0.1:3306/forum?useSSL=false
       username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
-mybatis:
-  config-location: classpath:MapperConfig/*.xml
-  type-aliases-package: com.sap.entity
+
+
 
 
 
