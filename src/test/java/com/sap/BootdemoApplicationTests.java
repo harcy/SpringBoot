@@ -22,6 +22,13 @@ public class BootdemoApplicationTests {
 
     @Test
     public void test() {
+
+        /*
+        * .yml配置打开执行的sql语句,当访问数据库拿数据时会显示sql
+        * 而从缓存中直接get数据不会显示执行了sql
+        * 如何确定cacheManager对象的实例, spring的CacheManager
+        * 如何与Ehcache结合起来的
+        * */
         User u1 = userMapper.findByUserName("lucy");
         System.out.println(u1.getUserAge());
 
