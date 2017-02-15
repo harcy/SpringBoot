@@ -4,6 +4,8 @@ import com.sap.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -19,10 +21,13 @@ import java.util.List;
  *
  */
 
+@CacheConfig(cacheNames = "users")
 public interface UserMapper extends JpaRepository<User,Integer>{
 
     User findByUserName(String userName);
 
+    @Cacheable(key = "#p0")
+    User findByUserAge(Integer userAge);
 
     List<User> findAll();
 }
