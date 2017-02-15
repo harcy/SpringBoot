@@ -24,10 +24,12 @@ import java.util.List;
 @CacheConfig(cacheNames = "users")
 public interface UserMapper extends JpaRepository<User,Integer>{
 
+    @Cacheable()
     User findByUserName(String userName);
 
-    @Cacheable(key = "#p0")
+    //@Cacheable(key = "#p0")
     User findByUserAge(Integer userAge);
 
     List<User> findAll();
+
 }
